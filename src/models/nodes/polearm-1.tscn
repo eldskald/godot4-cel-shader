@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://qhwe2yhkr5vk"]
+
+[ext_resource type="PackedScene" uid="uid://4lwfrgo13qpn" path="res://models/models/polearm-1.glb" id="1_hb0iy"]
+[ext_resource type="Material" uid="uid://b30hw7jthmxmu" path="res://materials/materials/wood-1.tres" id="2_owasu"]
+[ext_resource type="Material" uid="uid://5qss4ojdhbk2" path="res://materials/materials/steel-1.tres" id="3_4tekr"]
+[ext_resource type="Material" uid="uid://2m8mvnhn7r2w" path="res://materials/materials/steel-2.tres" id="4_b4bpg"]
+
+[node name="polearm-1" instance=ExtResource("1_hb0iy")]
+
+[node name="Cylinder" parent="." index="0"]
+transform = Transform3D(0.664196, 0.00560695, -0.0017212, -0.00122266, 3.06795, -0.00339532, 0.00171496, 0.0156979, 0.664189, 1.29108e-05, 0.827109, -1.42364e-05)
+surface_material_override/0 = ExtResource("2_owasu")
+
+[node name="Cylinder001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_4tekr")
+
+[node name="Cylinder002" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_b4bpg")

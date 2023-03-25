@@ -1,7 +1,7 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://sheh62lm2uaf"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3]
 
 [ext_resource type="Material" uid="uid://0qju63p01l1i" path="res://materials/outline-alpha.tres" id="1_bp6qv"]
-[ext_resource type="Shader" path="res://shaders/cel-shader-alpha-refr.gdshader" id="1_n4wg8"]
+[ext_resource type="Shader" path="res://shaders/cel-shader-transp.gdshader" id="1_n4wg8"]
 
 [resource]
 render_priority = 0

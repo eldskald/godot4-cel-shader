@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://x5u5qv4eorfh"]
+
+[ext_resource type="PackedScene" uid="uid://d1i5ofp6yu62u" path="res://models/models/sword-1.glb" id="1_3we6o"]
+[ext_resource type="Material" uid="uid://5qss4ojdhbk2" path="res://materials/materials/steel-1.tres" id="2_hapi1"]
+[ext_resource type="Material" uid="uid://2m8mvnhn7r2w" path="res://materials/materials/steel-2.tres" id="3_1gid1"]
+[ext_resource type="Material" uid="uid://b30hw7jthmxmu" path="res://materials/materials/wood-1.tres" id="4_46tqg"]
+
+[node name="sword-1" instance=ExtResource("1_3we6o")]
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_hapi1")
+
+[node name="Cube001" parent="." index="1"]
+surface_material_override/0 = ExtResource("3_1gid1")
+
+[node name="Cylinder" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_46tqg")
+
+[node name="Sphere" parent="." index="3"]
+surface_material_override/0 = ExtResource("3_1gid1")

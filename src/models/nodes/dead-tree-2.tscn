@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://haq2wm17svvb"]
+[gd_scene load_steps=3 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bjwj1ku6cveyd" path="res://models/models/dead-tree-2.glb" id="1_jgrm6"]
-[ext_resource type="Material" uid="uid://ds2i5hgjb58jb" path="res://materials/materials/bark1.tres" id="2_bfl2b"]
+[ext_resource type="Material" uid="uid://ds2i5hgjb58jb" path="res://materials/materials/bark-1.tres" id="2_bfl2b"]
 
 [node name="dead-tree-2" instance=ExtResource("1_jgrm6")]
 

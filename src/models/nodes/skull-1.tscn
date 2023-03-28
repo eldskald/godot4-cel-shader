@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://0vce6ybed2ug"]
+
+[ext_resource type="PackedScene" uid="uid://bylb0ty6qra8y" path="res://models/models/skull-1.glb" id="1_14i44"]
+[ext_resource type="Material" uid="uid://cxotcnlcsr22b" path="res://materials/materials/bone-1.tres" id="2_3i5bk"]
+[ext_resource type="Material" uid="uid://5imn23y7stws" path="res://materials/black.tres" id="3_niwfc"]
+
+[node name="skull-1" instance=ExtResource("1_14i44")]
+
+[node name="BONES_HEAD" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3i5bk")
+surface_material_override/1 = ExtResource("3_niwfc")

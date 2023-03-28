@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://w4k1fp8lu7tr"]
+[gd_scene load_steps=9 format=3 uid="uid://w4k1fp8lu7tr"]
 
-[ext_resource type="PackedScene" uid="uid://dka531ojae3wn" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
+[ext_resource type="PackedScene" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
-[ext_resource type="PackedScene" uid="uid://haq2wm17svvb" path="res://models/nodes/dead-tree-2.tscn" id="5_lq7xb"]
+[ext_resource type="PackedScene" path="res://models/nodes/dead-tree-2.tscn" id="5_lq7xb"]
 [ext_resource type="PackedScene" uid="uid://dh4ugcqrvgpdq" path="res://models/nodes/shield-1.tscn" id="5_yoddf"]
 [ext_resource type="PackedScene" uid="uid://x5u5qv4eorfh" path="res://models/nodes/sword-1.tscn" id="6_fnwlx"]
-[ext_resource type="Material" uid="uid://badbu2vtbonxy" path="res://materials/materials/glass1.tres" id="6_u7k6k"]
+[ext_resource type="PackedScene" path="res://models/nodes/ground-1.tscn" id="6_jjnxp"]
+[ext_resource type="PackedScene" uid="uid://0vce6ybed2ug" path="res://models/nodes/skull-1.tscn" id="7_6ib85"]
 
 [sub_resource type="Environment" id="Environment_5lahd"]
 ambient_light_source = 2
@@ -15,10 +16,6 @@ glow_enabled = true
 glow_intensity = 1.0
 glow_strength = 0.6
 glow_blend_mode = 1
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_epw7s"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_07qo7"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -36,10 +33,10 @@ transform = Transform3D(0.943049, 0, -0.332655, 0, 1, 0, 0.332655, 0, 0.943049, 
 current = true
 
 [node name="dead-tree-1" parent="." instance=ExtResource("4_7qvcg")]
-transform = Transform3D(0.347574, 0, 0.937653, 0, 1, 0, -0.937653, 0, 0.347574, 1.04651, -0.214257, 0.673103)
+transform = Transform3D(0.347574, 0, 0.937653, 0, 1, 0, -0.937653, 0, 0.347574, 1.04651, -0.0491647, 0.673103)
 
 [node name="dead-tree-2" parent="." instance=ExtResource("5_lq7xb")]
-transform = Transform3D(0.951584, 0, 0.30739, 0, 1, 0, -0.30739, 0, 0.951584, 1.1079, -0.197693, 2.08747)
+transform = Transform3D(0.951584, 0, 0.30739, 0, 1, 0, -0.30739, 0, 0.951584, 1.1079, -0.0190576, 2.08747)
 
 [node name="sword-1" parent="." instance=ExtResource("6_fnwlx")]
 transform = Transform3D(-0.200907, 0, 0.97961, 0, 1, 0, -0.97961, 0, -0.200907, 0.575161, 0.157339, 0.488979)
@@ -50,11 +47,8 @@ transform = Transform3D(-0.503262, 0, 0.864134, 0, 1, 0, -0.864134, 0, -0.503262
 [node name="shield-1" parent="." instance=ExtResource("5_yoddf")]
 transform = Transform3D(-0.379747, 0, 0.925091, 0, 1, 0, -0.925091, 0, -0.379747, 0.2, 0.132911, 0.8)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.65, 0, 0, 0, 1, 0, 0, 0, 4.4, 0, -0.2, 0)
-mesh = SubResource("PlaneMesh_epw7s")
+[node name="ground-1" parent="." instance=ExtResource("6_jjnxp")]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.319687, 0, -0.947523, 0, 1, 0, 0.947523, 0, 0.319687, -1.01266, 0.8, 1.80999)
-mesh = SubResource("SphereMesh_07qo7")
-surface_material_override/0 = ExtResource("6_u7k6k")
+[node name="skull-1" parent="." instance=ExtResource("7_6ib85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.162194, 1.6)

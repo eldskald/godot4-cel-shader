@@ -11,7 +11,7 @@ shader_type spatial;
 #define USE_REFRACTION 0
 
 #if USE_ALPHA
-render_mode depth_draw_never;
+render_mode depth_draw_always;
 #endif
 
 #include "includes/base-cel-shader.gdshaderinc"

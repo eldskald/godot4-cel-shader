@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=3 format=3]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://badbu2vtbonxy"]
 
 [ext_resource type="Material" uid="uid://0qju63p01l1i" path="res://materials/outline-alpha.tres" id="1_bp6qv"]
 [ext_resource type="Shader" path="res://shaders/cel-shader-transp.gdshader" id="1_n4wg8"]

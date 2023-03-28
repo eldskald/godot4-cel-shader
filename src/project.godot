@@ -24,19 +24,19 @@ diffuse_curve={
 "type": "sampler2D",
 "value": ""
 }
-outline_width={
-"type": "float",
-"value": 2.0
-}
-specular_smoothness={
-"type": "float",
-"value": 0.05
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
 }
 fresnel_smoothness={
 "type": "float",
 "value": 0.05
 }
-outline_color={
-"type": "color",
-"value": Color(0, 0, 0, 1)
+specular_smoothness={
+"type": "float",
+"value": 0.05
+}
+outline_width={
+"type": "float",
+"value": 4.0
 }

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyyekr71tbhot"]
+
+[ext_resource type="PackedScene" uid="uid://bicpjvakwocg7" path="res://models/models/boulder-2.glb" id="1_omd7r"]
+[ext_resource type="Material" uid="uid://bduybcmyt0owf" path="res://materials/materials/stone-1.tres" id="2_actu3"]
+
+[node name="boulder-2" instance=ExtResource("1_omd7r")]
+
+[node name="Boulder" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_actu3")

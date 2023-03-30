@@ -14,6 +14,10 @@ config/name="Godot 4 Cel Shader"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[editor]
+
+naming/scene_name_casing=0
+
 [rendering]
 
 anti_aliasing/quality/msaa_3d=1

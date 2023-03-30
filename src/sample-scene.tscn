@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://w4k1fp8lu7tr"]
+[gd_scene load_steps=11 format=3 uid="uid://w4k1fp8lu7tr"]
 
+[ext_resource type="Material" uid="uid://b8fg4sf7meyfv" path="res://materials/vfx/sky.tres" id="1_jmqa1"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-2.tscn" id="5_lq7xb"]
@@ -8,9 +9,14 @@
 [ext_resource type="PackedScene" path="res://models/nodes/ground-1.tscn" id="6_jjnxp"]
 [ext_resource type="PackedScene" uid="uid://0vce6ybed2ug" path="res://models/nodes/skull-1.tscn" id="7_6ib85"]
 
+[sub_resource type="Sky" id="Sky_3glnw"]
+sky_material = ExtResource("1_jmqa1")
+
 [sub_resource type="Environment" id="Environment_5lahd"]
+background_mode = 2
+sky = SubResource("Sky_3glnw")
 ambient_light_source = 2
-ambient_light_color = Color(0.470588, 0.470588, 0.470588, 1)
+ambient_light_color = Color(0.211765, 0.211765, 0.211765, 1)
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 1.0
@@ -23,7 +29,7 @@ glow_blend_mode = 1
 environment = SubResource("Environment_5lahd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.662228, 0.749303, 0, -0.749303, 0.662228, 0.224601, 1.00613, -0.852877)
+transform = Transform3D(1, 0, 0, 0, 0.808925, 0.587912, 0, -0.587912, 0.808925, 0.606105, 1.00613, -0.852877)
 light_indirect_energy = 0.0
 shadow_enabled = true
 directional_shadow_mode = 1

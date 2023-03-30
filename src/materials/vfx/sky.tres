@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://b8fg4sf7meyfv"]
+
+[ext_resource type="Shader" path="res://shaders/sky.gdshader" id="1_velad"]
+
+[sub_resource type="Gradient" id="Gradient_onb3m"]
+offsets = PackedFloat32Array(0, 0.505376, 1)
+colors = PackedColorArray(0.3, 0.3, 0.3, 1, 0.15, 0.15, 0.15, 1, 0.3, 0.3, 0.3, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_otqm7"]
+gradient = SubResource("Gradient_onb3m")
+fill_to = Vector2(0, 1)
+
+[resource]
+shader = ExtResource("1_velad")
+shader_parameter/add_clouds = true
+shader_parameter/clouds_below = false
+shader_parameter/cloud_scale = 0.25
+shader_parameter/speed = 0.002
+shader_parameter/cloud_dark = 0.5
+shader_parameter/cloud_light = 0.3
+shader_parameter/cloud_cover = 0.2
+shader_parameter/cloud_alpha = 8.0
+shader_parameter/sky_tint = 0.5
+shader_parameter/height_offset = 0.2
+shader_parameter/sky_contribution = 0.5
+shader_parameter/source_panorama = SubResource("GradientTexture2D_otqm7")

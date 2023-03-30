@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://88di173s0jj4"]
+
+[ext_resource type="PackedScene" uid="uid://f4qsafo06ewy" path="res://models/models/ribcage-1.glb" id="1_wucqm"]
+[ext_resource type="Material" uid="uid://cxotcnlcsr22b" path="res://materials/materials/bone-1.tres" id="2_3tck7"]
+
+[node name="ribcage-1" instance=ExtResource("1_wucqm")]
+
+[node name="BONES_SPINE" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3tck7")
+
+[node name="BONES_RIBCAGE" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_3tck7")

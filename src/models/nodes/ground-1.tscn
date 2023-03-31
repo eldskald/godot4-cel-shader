@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://16sjrwsmddlm"]
 
 [ext_resource type="PackedScene" uid="uid://rwnbm0lcwhro" path="res://models/models/ground-1.glb" id="1_roqj5"]
-[ext_resource type="Material" uid="uid://bg48t74m3qcqg" path="res://materials/materials/dirt-1.tres" id="2_20w1x"]
+[ext_resource type="Material" uid="uid://kxcu62bv5lo4" path="res://materials/materials/grass-1.tres" id="2_ha4sw"]
 
 [node name="ground-1" instance=ExtResource("1_roqj5")]
 
 [node name="Grid" parent="." index="0"]
-surface_material_override/0 = ExtResource("2_20w1x")
+surface_material_override/0 = ExtResource("2_ha4sw")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://drqxgxg04hoi5"]
+
+[ext_resource type="PackedScene" uid="uid://csrg6uwnwfiwo" path="res://models/models/terrain-1.glb" id="1_xfqf5"]
+[ext_resource type="Material" uid="uid://kxcu62bv5lo4" path="res://materials/materials/grass-1.tres" id="2_ofimy"]
+[ext_resource type="Material" uid="uid://bg48t74m3qcqg" path="res://materials/materials/dirt-1.tres" id="3_j6enc"]
+
+[node name="terrain-1" instance=ExtResource("1_xfqf5")]
+
+[node name="Grid" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_ofimy")
+surface_material_override/1 = ExtResource("3_j6enc")

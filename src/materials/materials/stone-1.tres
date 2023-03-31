@@ -7,7 +7,7 @@
 render_priority = 0
 next_pass = ExtResource("1_is7ab")
 shader = ExtResource("2_qkcgs")
-shader_parameter/color = Color(0.439216, 0.419608, 0.403922, 1)
+shader_parameter/color = Color(0.403922, 0.439216, 0.431373, 1)
 shader_parameter/specular = Color(0, 0, 0, 0.501961)
 shader_parameter/fresnel = Color(0.15, 0.15, 0.15, 0.392157)
 shader_parameter/uv_scale = Vector2(1, 1)

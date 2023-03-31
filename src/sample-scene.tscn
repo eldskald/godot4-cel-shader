@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://w4k1fp8lu7tr"]
 
 [ext_resource type="Material" uid="uid://b8fg4sf7meyfv" path="res://materials/vfx/sky.tres" id="1_jmqa1"]
+[ext_resource type="PackedScene" uid="uid://c5rtegb17frlh" path="res://models/nodes/ground-2.tscn" id="2_0rnuk"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-2.tscn" id="5_lq7xb"]
 [ext_resource type="PackedScene" uid="uid://dh4ugcqrvgpdq" path="res://models/nodes/shield-1.tscn" id="5_yoddf"]
 [ext_resource type="PackedScene" uid="uid://x5u5qv4eorfh" path="res://models/nodes/sword-1.tscn" id="6_fnwlx"]
-[ext_resource type="PackedScene" path="res://models/nodes/ground-1.tscn" id="6_jjnxp"]
 [ext_resource type="PackedScene" uid="uid://0vce6ybed2ug" path="res://models/nodes/skull-1.tscn" id="7_6ib85"]
 
 [sub_resource type="Sky" id="Sky_3glnw"]
@@ -38,11 +38,14 @@ directional_shadow_mode = 1
 transform = Transform3D(0.943049, 0, -0.332655, 0, 1, 0, 0.332655, 0, 0.943049, -0.572528, 0.704281, 3.49133)
 current = true
 
+[node name="ground-2" parent="." instance=ExtResource("2_0rnuk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+
 [node name="dead-tree-1" parent="." instance=ExtResource("4_7qvcg")]
 transform = Transform3D(0.347574, 0, 0.937653, 0, 1, 0, -0.937653, 0, 0.347574, 1.04651, -0.0491647, 0.673103)
 
 [node name="dead-tree-2" parent="." instance=ExtResource("5_lq7xb")]
-transform = Transform3D(0.951584, 0, 0.30739, 0, 1, 0, -0.30739, 0, 0.951584, 1.1079, -0.0190576, 2.08747)
+transform = Transform3D(0.951584, 0, 0.30739, 0, 1, 0, -0.30739, 0, 0.951584, 1.1079, -0.319058, 2.08747)
 
 [node name="sword-1" parent="." instance=ExtResource("6_fnwlx")]
 transform = Transform3D(-0.200907, 0, 0.97961, 0, 1, 0, -0.97961, 0, -0.200907, 0.575161, 0.157339, 0.488979)
@@ -52,9 +55,6 @@ transform = Transform3D(-0.503262, 0, 0.864134, 0, 1, 0, -0.864134, 0, -0.503262
 
 [node name="shield-1" parent="." instance=ExtResource("5_yoddf")]
 transform = Transform3D(-0.379747, 0, 0.925091, 0, 1, 0, -0.925091, 0, -0.379747, 0.2, 0.132911, 0.8)
-
-[node name="ground-1" parent="." instance=ExtResource("6_jjnxp")]
-transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="skull-1" parent="." instance=ExtResource("7_6ib85")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.162194, 1.6)

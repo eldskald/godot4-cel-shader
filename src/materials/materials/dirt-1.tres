@@ -7,7 +7,7 @@
 render_priority = 0
 next_pass = ExtResource("1_fpywv")
 shader = ExtResource("2_yhumg")
-shader_parameter/color = Color(0.501961, 0.458824, 0.4, 1)
+shader_parameter/color = Color(0.431373, 0.396078, 0.345098, 1)
 shader_parameter/specular = Color(0, 0, 0, 0.501961)
 shader_parameter/fresnel = Color(0, 0, 0, 0)
 shader_parameter/uv_scale = Vector2(1, 1)

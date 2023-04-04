@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cybaae27u1ftu"]
+
+[ext_resource type="PackedScene" uid="uid://dk1dy1ky3lhky" path="res://models/models/shrub-1.glb" id="1_ydlwj"]
+[ext_resource type="Material" uid="uid://dplcjj746og87" path="res://materials/materials/leaves-1.tres" id="2_voibi"]
+
+[node name="shrub-1" instance=ExtResource("1_ydlwj")]
+
+[node name="Sphere" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_voibi")

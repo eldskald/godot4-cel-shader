@@ -15,6 +15,10 @@ run/main_scene="res://sample-scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [editor]
 
 naming/scene_name_casing=0

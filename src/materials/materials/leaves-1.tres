@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dplcjj746og87"]
+
+[ext_resource type="Material" uid="uid://dnvlpeg4no6w3" path="res://materials/outline.tres" id="1_i5qwn"]
+[ext_resource type="Shader" path="res://shaders/cel-shader-base.gdshader" id="2_jd1kr"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_i5qwn")
+shader = ExtResource("2_jd1kr")
+shader_parameter/color = Color(0.0784314, 0.458824, 0.0745098, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.501961)
+shader_parameter/fresnel = Color(0.16, 0.16, 0.16, 0.376471)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

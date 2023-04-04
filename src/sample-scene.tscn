@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://w4k1fp8lu7tr"]
+[gd_scene load_steps=13 format=3 uid="uid://w4k1fp8lu7tr"]
 
-[ext_resource type="Material" uid="uid://b8fg4sf7meyfv" path="res://materials/vfx/sky.tres" id="1_jmqa1"]
 [ext_resource type="PackedScene" uid="uid://c5rtegb17frlh" path="res://models/nodes/ground-2.tscn" id="2_0rnuk"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
@@ -8,20 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://dh4ugcqrvgpdq" path="res://models/nodes/shield-1.tscn" id="5_yoddf"]
 [ext_resource type="PackedScene" uid="uid://x5u5qv4eorfh" path="res://models/nodes/sword-1.tscn" id="6_fnwlx"]
 [ext_resource type="PackedScene" uid="uid://0vce6ybed2ug" path="res://models/nodes/skull-1.tscn" id="7_6ib85"]
+[ext_resource type="PackedScene" uid="uid://bt8wlqkmgclib" path="res://models/nodes/banner-1.tscn" id="8_0qa47"]
 
-[sub_resource type="Sky" id="Sky_3glnw"]
-sky_material = ExtResource("1_jmqa1")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bncm2"]
+sky_top_color = Color(0.384314, 0.454902, 0.54902, 1)
+sky_horizon_color = Color(0.878431, 0.580392, 0.184314, 1)
+sky_energy_multiplier = 0.8
+ground_bottom_color = Color(0.384314, 0.454902, 0.54902, 1)
+ground_horizon_color = Color(0.878431, 0.580392, 0.184314, 1)
+ground_curve = 0.196983
+ground_energy_multiplier = 0.8
+
+[sub_resource type="Sky" id="Sky_sudva"]
+sky_material = SubResource("ProceduralSkyMaterial_bncm2")
 
 [sub_resource type="Environment" id="Environment_5lahd"]
 background_mode = 2
-sky = SubResource("Sky_3glnw")
+sky = SubResource("Sky_sudva")
 ambient_light_source = 2
-ambient_light_color = Color(0.211765, 0.211765, 0.211765, 1)
+ambient_light_color = Color(0.2, 0.372549, 0.411765, 1)
 tonemap_mode = 2
 glow_enabled = true
 glow_intensity = 1.0
 glow_strength = 0.6
 glow_blend_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jecce"]
+size = Vector3(27.6, 2.6, 15.2)
 
 [node name="Node3D" type="Node3D"]
 
@@ -29,14 +41,25 @@ glow_blend_mode = 1
 environment = SubResource("Environment_5lahd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.808925, 0.587912, 0, -0.587912, 0.808925, 0.606105, 1.00613, -0.852877)
+transform = Transform3D(0.0424201, -0.394876, 0.917755, -0.0144824, 0.918242, 0.395755, -0.998995, -0.0300793, 0.0332332, 0.606105, 2.60517, 0.518529)
 light_indirect_energy = 0.0
 shadow_enabled = true
 directional_shadow_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.943049, 0, -0.332655, 0, 1, 0, 0.332655, 0, 0.943049, -0.572528, 0.704281, 3.49133)
+transform = Transform3D(0.824818, 0, -0.565399, 0, 1, 0, 0.565399, 0, 0.824818, -0.572528, 0.704281, 3.49133)
 current = true
+
+[node name="Wind" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, 3.6)
+wind_force_magnitude = 5.0
+wind_source_path = NodePath("Node3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wind"]
+shape = SubResource("BoxShape3D_jecce")
+
+[node name="Node3D" type="Node3D" parent="Wind"]
+transform = Transform3D(-0.0937608, 0, 0.995595, 0, 1, 0, -0.995595, 0, -0.0937608, 0, 0, 0)
 
 [node name="ground-2" parent="." instance=ExtResource("2_0rnuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
@@ -58,3 +81,6 @@ transform = Transform3D(-0.379747, 0, 0.925091, 0, 1, 0, -0.925091, 0, -0.379747
 
 [node name="skull-1" parent="." instance=ExtResource("7_6ib85")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.162194, 1.6)
+
+[node name="banner-1" parent="." instance=ExtResource("8_0qa47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13899, -0.240866, 1.17151)

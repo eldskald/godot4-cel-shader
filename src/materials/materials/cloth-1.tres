@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c2278ea5y38ul"]
+
+[ext_resource type="Shader" path="res://shaders/cel-shader-translucent.gdshader" id="2_uqr2a"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("2_uqr2a")
+shader_parameter/backlight = Color(1, 1, 1, 1)
+shader_parameter/color = Color(0.53, 0.3445, 0.347592, 1)
+shader_parameter/specular = Color(0, 0, 0, 0.501961)
+shader_parameter/fresnel = Color(0, 0, 0, 0.301961)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

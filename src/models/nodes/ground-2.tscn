@@ -12,7 +12,9 @@ surface_material_override/0 = ExtResource("2_ofoca")
 surface_material_override/1 = ExtResource("3_ytoqi")
 
 [node name="Grid001" parent="." index="1"]
+cast_shadow = 0
 surface_material_override/0 = ExtResource("4_nwkj6")
 
 [node name="Grid002" parent="." index="2"]
+cast_shadow = 0
 surface_material_override/0 = ExtResource("4_nwkj6")

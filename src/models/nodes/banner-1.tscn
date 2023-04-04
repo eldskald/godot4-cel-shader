@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt8wlqkmgclib"]
+
+[ext_resource type="PackedScene" uid="uid://ckbjxwegslf" path="res://models/models/banner-1.glb" id="1_auohb"]
+[ext_resource type="Material" uid="uid://b30hw7jthmxmu" path="res://materials/materials/wood-1.tres" id="2_onvrp"]
+[ext_resource type="Material" uid="uid://c2278ea5y38ul" path="res://materials/materials/cloth-1.tres" id="3_cjsqq"]
+[ext_resource type="ArrayMesh" uid="uid://cfilb6w18liup" path="res://models/models/banner-cloth-1.obj" id="3_mtp1o"]
+
+[node name="banner-1" instance=ExtResource("1_auohb")]
+
+[node name="Shaft" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_onvrp")
+
+[node name="Shaft001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_onvrp")
+
+[node name="SoftBody3D" type="SoftBody3D" parent="." index="2"]
+transform = Transform3D(0.999709, 0.0241006, 0, -0.0241006, 0.999709, 0, 0, 0, 1, -0.0921617, 1.60077, -0.0203542)
+cast_shadow = 0
+mesh = ExtResource("3_mtp1o")
+surface_material_override/0 = ExtResource("3_cjsqq")
+total_mass = 1.01
+linear_stiffness = 0.1
+pinned_points = [24, 148, 147, 45, 43, 167, 26, 133, 236, 105, 130, 235, 142, 101, 172, 131, 100, 151, 141, 152]
+attachments/0/point_index = 24
+attachments/0/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/0/offset = Vector3(-0.109259, 0.965074, 0.0583953)
+attachments/1/point_index = 148
+attachments/1/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/1/offset = Vector3(-0.0671107, 0.989696, 0.0594114)
+attachments/2/point_index = 147
+attachments/2/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/2/offset = Vector3(-0.0661627, 0.965074, 0.0200883)
+attachments/3/point_index = 45
+attachments/3/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/3/offset = Vector3(-0.024962, 0.965074, 0.0604275)
+attachments/4/point_index = 43
+attachments/4/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/4/offset = Vector3(-0.024962, 0.790726, 0.0604275)
+attachments/5/point_index = 167
+attachments/5/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/5/offset = Vector3(-0.0661627, 0.790726, 0.0200883)
+attachments/6/point_index = 26
+attachments/6/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/6/offset = Vector3(-0.109259, 0.790726, 0.0583953)
+attachments/7/point_index = 133
+attachments/7/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/7/offset = Vector3(-0.109259, 0.591756, 0.0583953)
+attachments/8/point_index = 236
+attachments/8/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/8/offset = Vector3(-0.0661627, 0.591756, 0.0200883)
+attachments/9/point_index = 105
+attachments/9/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/9/offset = Vector3(-0.024962, 0.591756, 0.0604275)
+attachments/10/point_index = 130
+attachments/10/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/10/offset = Vector3(-0.109259, 0.392787, 0.0583953)
+attachments/11/point_index = 235
+attachments/11/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/11/offset = Vector3(-0.0661627, 0.392787, 0.0200883)
+attachments/12/point_index = 142
+attachments/12/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/12/offset = Vector3(-0.024962, 0.392787, 0.0604275)
+attachments/13/point_index = 101
+attachments/13/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/13/offset = Vector3(-0.024962, 0.193817, 0.0604275)
+attachments/14/point_index = 172
+attachments/14/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/14/offset = Vector3(-0.0661627, 0.193817, 0.0200883)
+attachments/15/point_index = 131
+attachments/15/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/15/offset = Vector3(-0.109259, 0.193817, 0.0583953)
+attachments/16/point_index = 100
+attachments/16/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/16/offset = Vector3(-0.024962, 0.0194691, 0.0604275)
+attachments/17/point_index = 151
+attachments/17/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/17/offset = Vector3(-0.0671107, -0.00515249, 0.0594114)
+attachments/18/point_index = 141
+attachments/18/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/18/offset = Vector3(-0.109259, 0.0194691, 0.0583953)
+attachments/19/point_index = 152
+attachments/19/spatial_attachment_path = NodePath("../Armature/Skeleton3D/BoneAttachment3D")
+attachments/19/offset = Vector3(-0.0661627, 0.0194691, 0.0200883)
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.77636e-15, 0, 1.77636e-15, 1, 0, 3.68883e-08, 3.73771e-08)
+bone_name = "Bone"
+bone_idx = 0

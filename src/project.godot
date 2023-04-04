@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot 4 Cel Shader"
+run/main_scene="res://sample-scene.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 

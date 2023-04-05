@@ -1,7 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://w4k1fp8lu7tr"]
+[gd_scene load_steps=24 format=3 uid="uid://w4k1fp8lu7tr"]
 
 [ext_resource type="Material" uid="uid://dp46s1ve43yhf" path="res://materials/vfx/sky.tres" id="1_sdkug"]
 [ext_resource type="PackedScene" uid="uid://c5rtegb17frlh" path="res://models/nodes/ground-2.tscn" id="2_0rnuk"]
+[ext_resource type="Shader" path="res://shaders/fog-particles.gdshader" id="3_3yirp"]
+[ext_resource type="Material" uid="uid://bosesbm3odu8g" path="res://materials/vfx/fog-particles-instance.tres" id="3_ro55t"]
 [ext_resource type="PackedScene" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
 [ext_resource type="PackedScene" uid="uid://gade2qfiwkac" path="res://models/nodes/boulder-1.tscn" id="5_b4768"]
@@ -40,13 +42,36 @@ volumetric_fog_sky_affect = 0.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecce"]
 size = Vector3(27.6, 6.49867, 15.2)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5lms4"]
+shader = ExtResource("3_3yirp")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/initial_linear_velocity_min = null
+shader_parameter/initial_linear_velocity_max = 0.0
+shader_parameter/scale_min = 3.0
+shader_parameter/scale_max = 6.0
+shader_parameter/lifetime_randomness = 0.5
+shader_parameter/emission_box_extents = Vector3(10, 1, 10)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7j32d"]
+material = ExtResource("3_ro55t")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqroh"]
+shader = ExtResource("3_3yirp")
+shader_parameter/color = Color(1, 1, 1, 0.501961)
+shader_parameter/initial_linear_velocity_min = null
+shader_parameter/initial_linear_velocity_max = 0.0
+shader_parameter/scale_min = 2.0
+shader_parameter/scale_max = 4.0
+shader_parameter/lifetime_randomness = 0.5
+shader_parameter/emission_box_extents = Vector3(10, 0.5, 10)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5lahd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0428685, -0.424519, 0.904404, -0.0130956, 0.904919, 0.425382, -0.998995, -0.0300792, 0.0332332, 0.606105, 2.60517, 0.518529)
+transform = Transform3D(0.0382943, -0.187372, 0.981542, -0.023297, 0.981829, 0.188335, -0.998995, -0.0300792, 0.0332332, 0.606105, 2.60517, 0.518529)
 light_indirect_energy = 0.0
 shadow_enabled = true
 directional_shadow_mode = 1
@@ -68,6 +93,50 @@ transform = Transform3D(-0.0937608, 0, 0.995595, 0, 1, 0, -0.995595, 0, -0.09376
 
 [node name="ground-2" parent="." instance=ExtResource("2_0rnuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
+
+[node name="FogParticles" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -3.66326, 2.0085)
+amount = 4
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles2" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -4.06564, 2.0085)
+amount = 16
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_oqroh")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles3" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 2.096, -16.1601)
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles4" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8784, -2.23045, 0.657635)
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -2.36919, -9.1008, 25.02, 4.73838, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles5" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87236, 2.096, 21.4102)
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles6" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4493, 2.096, 21.4102)
+lifetime = 10.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
 
 [node name="dead-tree-1" parent="ground-2" instance=ExtResource("4_7qvcg")]
 transform = Transform3D(0.189429, 0, 2.39251, 0, 2.4, 0, -2.39251, 0, 0.189429, -1.17682, -2.68534, -5.17116)
@@ -360,8 +429,8 @@ transform = Transform3D(1.49833, 0, -0.0708166, 0, 1.5, 0, 0.0708166, 0, 1.49833
 [node name="banner-3" parent="ground-2" instance=ExtResource("8_0qa47")]
 transform = Transform3D(1.4655, 0, 0.319878, 0, 1.5, 0, -0.319878, 0, 1.4655, -0.230546, -5.11884, 4.5198)
 
-[node name="banner-5" parent="ground-2" instance=ExtResource("8_0qa47")]
-transform = Transform3D(1.48964, 0, 0.175994, 0, 1.5, 0, -0.175994, 0, 1.48964, 9.07873, -2.73239, 11.2061)
-
 [node name="banner-4" parent="ground-2" instance=ExtResource("8_0qa47")]
 transform = Transform3D(1.25035, 0, -0.828626, 0, 1.5, 0, 0.828626, 0, 1.25035, -7.79494, -3.95661, -0.230699)
+
+[node name="banner-5" parent="ground-2" instance=ExtResource("8_0qa47")]
+transform = Transform3D(1.48964, 0, 0.175994, 0, 1.5, 0, -0.175994, 0, 1.48964, 9.07873, -2.73239, 11.2061)

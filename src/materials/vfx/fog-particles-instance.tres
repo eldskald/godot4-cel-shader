@@ -1,0 +1,27 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bosesbm3odu8g"]
+
+[ext_resource type="Shader" path="res://shaders/fog-particles-instance.gdshader" id="1_h8rw6"]
+
+[sub_resource type="Gradient" id="Gradient_s8sk5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ay2r8"]
+frequency = 0.003
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ngkac"]
+seamless = true
+seamless_blend_skirt = 1.0
+color_ramp = SubResource("Gradient_s8sk5")
+noise = SubResource("FastNoiseLite_ay2r8")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_h8rw6")
+shader_parameter/color = Color(1, 1, 1, 0.25098)
+shader_parameter/noise_scale = 4.0
+shader_parameter/noise_speed = Vector2(0.05, 0)
+shader_parameter/softness = 3.0
+shader_parameter/fade_in = 0.1
+shader_parameter/fade_out = 0.9
+shader_parameter/near_fade = 3.0
+shader_parameter/far_fade = 50.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_ngkac")

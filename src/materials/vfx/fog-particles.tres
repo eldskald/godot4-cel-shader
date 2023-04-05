@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dcoe73y8j3o1k"]
+
+[ext_resource type="Shader" path="res://shaders/fog-particles.gdshader" id="1_223ie"]
+
+[resource]
+shader = ExtResource("1_223ie")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/initial_linear_velocity_min = null
+shader_parameter/initial_linear_velocity_max = 0.0
+shader_parameter/scale_min = 3.0
+shader_parameter/scale_max = 6.0
+shader_parameter/lifetime_randomness = 0.5
+shader_parameter/emission_box_extents = Vector3(10, 1, 10)

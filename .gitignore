@@ -1,3 +1,3 @@
-src/**/*.import
-src/export_presets.cfg
-src/.godot/
+demo/**/*.import
+demo/export_presets.cfg
+demo/.godot/

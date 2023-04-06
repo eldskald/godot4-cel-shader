@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://w4k1fp8lu7tr"]
+[gd_scene load_steps=30 format=3 uid="uid://w4k1fp8lu7tr"]
 
 [ext_resource type="Material" uid="uid://dp46s1ve43yhf" path="res://materials/vfx/sky.tres" id="1_sdkug"]
 [ext_resource type="PackedScene" uid="uid://c5rtegb17frlh" path="res://models/nodes/ground-2.tscn" id="2_0rnuk"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://88di173s0jj4" path="res://models/nodes/ribcage-1.tscn" id="8_ilhi2"]
 [ext_resource type="PackedScene" uid="uid://cybaae27u1ftu" path="res://models/nodes/shrub-1.tscn" id="13_yd88f"]
 [ext_resource type="PackedScene" uid="uid://drqxgxg04hoi5" path="res://models/nodes/terrain-1.tscn" id="14_ouj73"]
+[ext_resource type="Script" path="res://scripts/controls.gd" id="19_rl5th"]
 
 [sub_resource type="Sky" id="Sky_sudva"]
 sky_material = ExtResource("1_sdkug")
@@ -65,6 +66,22 @@ shader_parameter/scale_max = 4.0
 shader_parameter/lifetime_randomness = 0.5
 shader_parameter/emission_box_extents = Vector3(10, 0.5, 10)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_72l4c"]
+radius = 0.4
+height = 1.7
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_if8dw"]
+size = Vector3(18.59, 1, 12.5004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mwl0"]
+size = Vector3(29.214, 1, 12.5004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jvd3"]
+size = Vector3(29.214, 1, 12.5004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wtvmc"]
+size = Vector3(18.59, 1, 12.5004)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -75,10 +92,6 @@ transform = Transform3D(0.0382943, -0.187372, 0.981542, -0.023297, 0.981829, 0.1
 light_indirect_energy = 0.0
 shadow_enabled = true
 directional_shadow_mode = 1
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.824818, 0, -0.565399, 0, 1, 0, 0.565399, 0, 0.824818, -0.572528, 0.704281, 3.49133)
-current = true
 
 [node name="Wind" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00175905, 2.74497, 3.59996)
@@ -434,3 +447,52 @@ transform = Transform3D(1.25035, 0, -0.828626, 0, 1.5, 0, 0.828626, 0, 1.25035, 
 
 [node name="banner-5" parent="ground-2" instance=ExtResource("8_0qa47")]
 transform = Transform3D(1.48964, 0, 0.175994, 0, 1.5, 0, -0.175994, 0, 1.48964, 9.07873, -2.73239, 11.2061)
+
+[node name="Controls" type="CharacterBody3D" parent="."]
+transform = Transform3D(-0.00623083, 0, -0.999981, 0, 1, 0, 0.999981, 0, -0.00623083, -0.513747, 0.906977, 2.01858)
+script = ExtResource("19_rl5th")
+vertical_look_boundary = 60.0
+speed = 3.5
+jump_power = 6.0
+gravity = 15.0
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="Controls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+current = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Controls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.156299, 0)
+shape = SubResource("CapsuleShape3D_72l4c")
+
+[node name="Limit" type="StaticBody3D" parent="."]
+transform = Transform3D(0.052946, 0, 0.998597, 0, 1, 0, -0.998597, 0, 0.052946, -10.0047, 2.43506, 2.24282)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limit"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_if8dw")
+
+[node name="Limit2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.23056, 1.89688, 10.5525)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limit2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_7mwl0")
+
+[node name="Limit3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.825083, 1.89688, -6.39621)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limit3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_6jvd3")
+
+[node name="Limit4" type="StaticBody3D" parent="."]
+transform = Transform3D(0.052946, 0, 0.998597, 0, 1, 0, -0.998597, 0, 0.052946, 11.4604, -0.191917, 1.47561)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limit4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_wtvmc")

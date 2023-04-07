@@ -6,7 +6,18 @@ This project is a demo of my Cel Shader for Godot 4. This is a continuation of [
 
 ## Instructions
 
-Just put [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and the [includes](src/includes) folder on your project, on the same folder. Whenever you want a material with one of the additional features, make a copy of [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and change the defines.
+Just put [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and the [includes](src/includes) folder on your project, on the same folder. Then, go to Project Settings > Shader Globals and set the following:
+
+```
+float specular_smoothness = 0.05
+float fresnel_smoothness = 0.05
+float outline_width = 4
+color outline_color = black
+```
+
+These values are the ones that made this screenshot you're seeing, but feel free to mess around with these values.
+
+Whenever you want a material with one of the additional features, make a copy of [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and change the defines.
 
 ![](images/image2.png)
 

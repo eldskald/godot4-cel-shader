@@ -95,7 +95,7 @@ metadata/_edit_group_ = true
 shape = SubResource("BoxShape3D_jecce")
 
 [node name="Node3D" type="Node3D" parent="Wind"]
-transform = Transform3D(-0.0937608, 0, 0.995595, 0, 1, 0, -0.995595, 0, -0.0937608, 0, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="ground-2" parent="." instance=ExtResource("2_0rnuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416236, 4.21299, 0.447938)
@@ -152,7 +152,7 @@ transform = Transform3D(1.28015, 0, -2.26301, 0, 2.6, 0, 2.26301, 0, 1.28015, -6
 transform = Transform3D(0.788741, 0.126978, 0.601469, -0.10097, 0.991906, -0.0769966, -0.606377, 0, 0.795177, 2.20454, -4.87544, 1.93233)
 
 [node name="boulder-14" parent="ground-2" instance=ExtResource("5_b4768")]
-transform = Transform3D(0.788741, 0.126978, 0.601469, -0.10097, 0.991906, -0.0769966, -0.606377, 0, 0.795177, 10.8644, -2.46921, -3.60467)
+transform = Transform3D(0.487355, 0.116783, 0.86536, -0.10097, 0.991906, -0.0769966, -0.867347, -0.0498508, 0.495201, 10.8644, -2.46921, -3.60467)
 
 [node name="boulder-10" parent="ground-2" instance=ExtResource("5_b4768")]
 transform = Transform3D(1.57748, 0.253956, 1.20294, -0.20194, 1.98381, -0.153993, -1.21275, 0, 1.59035, 6.84194, 0.950453, 18.8624)
@@ -569,10 +569,10 @@ transform = Transform3D(1.42706, -7.22706e-07, -0.462057, -2.94298e-07, 1.5, -2.
 transform = Transform3D(-1.46322, 2.23517e-08, 0.330152, 0.111369, 1.41208, 0.49358, -0.310801, 0.505988, -1.37745, 9.79656, -3.38586, -5.01318)
 
 [node name="banner-2" parent="ground-2/terrain-1" instance=ExtResource("8_0qa47")]
-transform = Transform3D(-0.975477, 0.0742458, -0.207201, 1.98682e-08, 0.941388, 0.337325, 0.220101, 0.329053, -0.918303, 0.292279, 1.27648, -1.80421)
+transform = Transform3D(-0.864695, 0.0742456, -0.496779, -0.103601, 0.941388, 0.321022, 0.491496, 0.329053, -0.806322, 0.292279, 1.27648, -1.80421)
 
 [node name="banner-3" parent="ground-2/terrain-1" instance=ExtResource("8_0qa47")]
-transform = Transform3D(-0.975476, 0.0742458, -0.207201, -2.10497e-08, 0.941388, 0.337325, 0.220101, 0.329053, -0.918303, 12.3045, 1.24264, 1.06373)
+transform = Transform3D(-0.983679, 0.074246, 0.163889, 0.123362, 0.941388, 0.313958, -0.130973, 0.329053, -0.935185, 12.3044, 1.24264, 1.06373)
 
 [node name="terrain-2" parent="ground-2" instance=ExtResource("14_ouj73")]
 transform = Transform3D(1.49429, -0.0823796, -0.101485, 0.111369, 1.41208, 0.49358, 0.0684291, -0.499237, 1.41283, 11.547, -3.34039, 8.77051)
@@ -626,7 +626,7 @@ transform = Transform3D(-1.32817, -0.208048, -1.48077, -0.131281, 1.98912, -0.16
 transform = Transform3D(-0.82829, 0.0659129, 1.4831, -0.111589, 1.69075, -0.137462, -1.48037, -0.164327, -0.819459, -17.7786, -2.68213, 4.44979)
 
 [node name="banner-1" parent="ground-2" instance=ExtResource("8_0qa47")]
-transform = Transform3D(1.49833, 0, -0.0708166, 0, 1.5, 0, 0.0708166, 0, 1.49833, 2.83216, -5.01304, -1.18924)
+transform = Transform3D(1.43323, 0, -0.442562, 0, 1.5, 0, 0.442562, 0, 1.43323, 2.83216, -5.01304, -1.18924)
 
 [node name="banner-3" parent="ground-2" instance=ExtResource("8_0qa47")]
 transform = Transform3D(1.28734, 0, 0.769909, 0, 1.5, 0, -0.769909, 0, 1.28734, -0.230546, -5.11884, 4.5198)
@@ -638,7 +638,7 @@ transform = Transform3D(1.46205, 0, -0.335285, 0, 1.5, 0, 0.335285, 0, 1.46205, 
 transform = Transform3D(1.25035, 0, -0.828626, 0, 1.5, 0, 0.828626, 0, 1.25035, -7.79494, -3.95661, -0.230699)
 
 [node name="banner-5" parent="ground-2" instance=ExtResource("8_0qa47")]
-transform = Transform3D(1.48964, 0, 0.175994, 0, 1.5, 0, -0.175994, 0, 1.48964, 9.07873, -2.73239, 11.2061)
+transform = Transform3D(1.44412, 0, -0.405599, 0, 1.5, 0, 0.405599, 0, 1.44412, 9.07873, -2.73239, 11.2061)
 
 [node name="FogParticles" type="GPUParticles3D" parent="ground-2"]
 transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -3.66326, 2.0085)

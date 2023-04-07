@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://76ryr25aklhn"]
+
+[ext_resource type="Shader" path="res://shaders/fog.gdshader" id="1_de7et"]
+
+[resource]
+shader = ExtResource("1_de7et")
+shader_parameter/base_density = 0.3
+shader_parameter/base_color = Color(0.55, 0.55, 0.55, 1)
+shader_parameter/fade_out_height = 10.0
+shader_parameter/fade_out_distance = 1.5
+shader_parameter/noise_amounts = Vector3(0.4, 0.35, 0.25)
+shader_parameter/noise_scales = Vector3(2, 2, 4)
+shader_parameter/noise_velocity1 = Vector3(0.3, 0, -0.1)
+shader_parameter/noise_velocity2 = Vector3(0.1, 0, 0.1)
+shader_parameter/noise_velocity3 = Vector3(0, 0.2, 0)

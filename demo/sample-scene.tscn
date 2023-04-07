@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://88di173s0jj4" path="res://models/nodes/ribcage-1.tscn" id="8_ilhi2"]
 [ext_resource type="PackedScene" uid="uid://cybaae27u1ftu" path="res://models/nodes/shrub-1.tscn" id="13_yd88f"]
 [ext_resource type="PackedScene" uid="uid://drqxgxg04hoi5" path="res://models/nodes/terrain-1.tscn" id="14_ouj73"]
+[ext_resource type="Material" uid="uid://76ryr25aklhn" path="res://materials/vfx/volumetric-fog.tres" id="18_lpgmh"]
 [ext_resource type="Script" path="res://scripts/controls.gd" id="19_rl5th"]
 
 [sub_resource type="Sky" id="Sky_sudva"]
@@ -38,6 +39,7 @@ fog_sky_affect = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.025
 volumetric_fog_albedo = Color(0.6, 0.6, 0.6, 1)
+volumetric_fog_gi_inject = 0.0
 volumetric_fog_sky_affect = 0.0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jecce"]
@@ -55,16 +57,6 @@ shader_parameter/emission_box_extents = Vector3(10, 1, 10)
 
 [sub_resource type="QuadMesh" id="QuadMesh_7j32d"]
 material = ExtResource("3_ro55t")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqroh"]
-shader = ExtResource("3_3yirp")
-shader_parameter/color = Color(1, 1, 1, 0.501961)
-shader_parameter/initial_linear_velocity_min = null
-shader_parameter/initial_linear_velocity_max = 0.0
-shader_parameter/scale_min = 2.0
-shader_parameter/scale_max = 4.0
-shader_parameter/lifetime_randomness = 0.5
-shader_parameter/emission_box_extents = Vector3(10, 0.5, 10)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_72l4c"]
 radius = 0.4
@@ -106,50 +98,6 @@ transform = Transform3D(-0.0937608, 0, 0.995595, 0, 1, 0, -0.995595, 0, -0.09376
 
 [node name="ground-2" parent="." instance=ExtResource("2_0rnuk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 0)
-
-[node name="FogParticles" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -3.66326, 2.0085)
-amount = 4
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
-process_material = SubResource("ShaderMaterial_5lms4")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
-
-[node name="FogParticles2" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -4.06564, 2.0085)
-amount = 16
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
-process_material = SubResource("ShaderMaterial_oqroh")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
-
-[node name="FogParticles3" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 2.096, -16.1601)
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
-process_material = SubResource("ShaderMaterial_5lms4")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
-
-[node name="FogParticles4" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8784, -2.23045, 0.657635)
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -2.36919, -9.1008, 25.02, 4.73838, 18.2016)
-process_material = SubResource("ShaderMaterial_5lms4")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
-
-[node name="FogParticles5" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87236, 2.096, 21.4102)
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
-process_material = SubResource("ShaderMaterial_5lms4")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
-
-[node name="FogParticles6" type="GPUParticles3D" parent="ground-2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4493, 2.096, 21.4102)
-lifetime = 10.0
-visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
-process_material = SubResource("ShaderMaterial_5lms4")
-draw_pass_1 = SubResource("QuadMesh_7j32d")
 
 [node name="dead-tree-1" parent="ground-2" instance=ExtResource("4_7qvcg")]
 transform = Transform3D(0.189429, 0, 2.39251, 0, 2.4, 0, -2.39251, 0, 0.189429, -1.17682, -2.68534, -5.17116)
@@ -447,6 +395,162 @@ transform = Transform3D(1.25035, 0, -0.828626, 0, 1.5, 0, 0.828626, 0, 1.25035, 
 
 [node name="banner-5" parent="ground-2" instance=ExtResource("8_0qa47")]
 transform = Transform3D(1.48964, 0, 0.175994, 0, 1.5, 0, -0.175994, 0, 1.48964, 9.07873, -2.73239, 11.2061)
+
+[node name="FogParticles" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.983194, -0.182562, 0, 0.182562, 0.983194, -2.38419e-07, -3.66326, 2.0085)
+amount = 4
+lifetime = 20.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles3" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 2.096, -16.1601)
+lifetime = 20.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles4" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8784, -2.23045, 0.657635)
+lifetime = 20.0
+visibility_aabb = AABB(-12.51, -2.36919, -9.1008, 25.02, 4.73838, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles5" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.87236, 2.096, 21.4102)
+lifetime = 20.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogParticles6" type="GPUParticles3D" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4493, 2.096, 21.4102)
+lifetime = 20.0
+visibility_aabb = AABB(-12.51, -4, -9.1008, 25.02, 8, 18.2016)
+process_material = SubResource("ShaderMaterial_5lms4")
+draw_pass_1 = SubResource("QuadMesh_7j32d")
+
+[node name="FogVolume" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.985331, -0.170657, 0, 0.170657, 0.985331, 0, -4.36146, 2.55698)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume2" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0.00101234, 0, -0.00101234, 1, 8.73909, -4.59131, 2.33436)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume3" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.9289, -0.37033, 0, 0.37033, 0.9289, 4.51092, -2.8587, -3.30738)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume4" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.927413, -0.37404, 0, 0.37404, 0.927413, -4.30222, -2.51184, -3.30738)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume5" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.992705, 0.120538, -0.00277328, -0.119836, 0.983863, -0.132868, -0.0132871, 0.132231, 0.99113, -8.78974, -3.765, 4.70337)
+size = Vector3(8.76003, 0.924804, 9.67034)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume6" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.996138, 0.0814259, -0.0328404, -0.087799, 0.923831, -0.372596, -2.22045e-16, 0.37404, 0.927413, -13.0013, -2.00654, -3.30738)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume7" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.985804, 0.165118, -0.0304554, -0.164233, 0.985978, 0.0295814, 0.0349128, -0.0241596, 0.999098, -17.1089, -2.24355, 4.78671)
+size = Vector3(8.76003, 0.924804, 9.55457)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume8" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.994436, -0.0985625, -0.0371867, 0.103993, 0.974838, 0.197172, 0.0168172, -0.199943, 0.979663, 4.79316, -3.83901, 8.95511)
+size = Vector3(8.76003, 0.924804, 5.32806)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume9" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.985079, -0.172101, -0.000174224, 0.172101, 0.985079, 0.000997232, 0, -0.00101234, 1, 17.4767, -3.96229, 2.33436)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume10" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.999783, 0.0208552, 0, -0.0208552, 0.999783, 11.6377, -1.89796, 9.22822)
+size = Vector3(5.33582, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume11" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.906153, 0.42295, 0, -0.42295, 0.906153, 11.6377, -0.352449, 13.8969)
+size = Vector3(5.33582, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume12" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.958327, -0.258862, -0.120825, 0.285357, 0.847593, 0.447391, -0.0134022, -0.463225, 0.88614, 6.24126, -0.804359, 13.8969)
+size = Vector3(5.33582, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume13" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.958327, -0.258862, -0.120825, 0.285357, 0.847593, 0.447391, -0.0134022, -0.463225, 0.88614, -0.181583, -2.74908, 15.5017)
+size = Vector3(8.09396, 0.924804, 9.79646)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume14" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.999783, 0.0208552, 0, -0.0208552, 0.999783, -9.47465, -2.43243, 13.206)
+size = Vector3(7.21529, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume15" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.986308, 0.147324, 0.0740997, -0.16491, 0.881132, 0.443183, -8.43638e-09, -0.449335, 0.893364, -9.47465, -0.553365, 19.8416)
+size = Vector3(7.21529, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume16" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.975223, 0.200413, 0.0936731, -0.220472, 0.915358, 0.336916, -0.0182221, -0.34922, 0.936864, -17.7938, 1.45265, 19.8416)
+size = Vector3(7.21529, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume17" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.946475, 0.322708, 0.00673159, -0.320642, 0.937612, 0.134434, 0.0370712, -0.129397, 0.9909, -16.4466, -0.81855, 12.6516)
+size = Vector3(7.21529, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume18" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.927413, -0.37404, 0, 0.37404, 0.927413, -4.30222, 0.725869, -9.00807)
+size = Vector3(8.76003, 0.924804, 7.96342)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume19" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.99541, 0.0887597, -0.0357982, -0.0957068, 0.923155, -0.372323, -2.22045e-16, 0.37404, 0.927413, 3.63059, -0.217909, -9.00807)
+size = Vector3(7.52986, 0.924804, 7.96342)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume20" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.929719, 0.0580838, -0.36366, -0.0851398, 0.994633, -0.0588023, 0.358293, 0.0856316, 0.929674, 10.259, -1.87171, -4.82992)
+size = Vector3(5.33582, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume21" type="FogVolume" parent="ground-2"]
+transform = Transform3D(1, 0, 0, 0, 0.934404, -0.356216, 0, 0.356216, 0.934404, 10.816, -0.230833, -10.5665)
+size = Vector3(6.57744, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume22" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.977035, -0.192299, 0.0917742, 0.21284, 0.901067, -0.377859, -0.0100327, 0.388715, 0.921304, 15.3169, -2.9063, -4.07178)
+size = Vector3(6.57744, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume23" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.991317, -0.122647, -0.0474213, 0.131495, 0.92461, 0.3575, 0, -0.360632, 0.932708, 16.9307, -2.52608, 8.71665)
+size = Vector3(6.57744, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
+
+[node name="FogVolume24" type="FogVolume" parent="ground-2"]
+transform = Transform3D(0.99948, -0.0307733, 0.00966631, 0.03222, 0.938361, -0.344151, 0.00152017, 0.344283, 0.938865, -13.0013, 0.833629, -9.77506)
+size = Vector3(8.76003, 0.924804, 6.8992)
+material = ExtResource("18_lpgmh")
 
 [node name="Controls" type="CharacterBody3D" parent="."]
 transform = Transform3D(-0.00623083, 0, -0.999981, 0, 1, 0, 0.999981, 0, -0.00623083, -0.513747, 0.906977, 2.01858)

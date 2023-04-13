@@ -29,6 +29,10 @@ This is how the defines look on [cel-shader-base.gdshader](src/cel-shader-base.g
 
 Lastly, you can watch the [Youtube video](https://youtu.be/F0LZ_hAci4k) for more information on how the base functions work and how to set it up.
 
+## Changelog
+
+- **Apr 12, 2023** <br/> Update shadow settings (Thanks to Dustin Jablonski).
+
 ## License
 
 All code is licensed under the [MIT](https://opensource.org/license/mit/) license.

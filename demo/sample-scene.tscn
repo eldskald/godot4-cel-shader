@@ -80,9 +80,11 @@ size = Vector3(18.59, 1, 12.5004)
 environment = SubResource("Environment_5lahd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.0382943, -0.187372, 0.981542, -0.023297, 0.981829, 0.188335, -0.998995, -0.0300792, 0.0332332, 0.606105, 2.60517, 0.518529)
+transform = Transform3D(0.0382943, -0.187372, 0.981542, -0.023297, 0.981828, 0.188335, -0.998995, -0.0300792, 0.0332332, 0.606105, 2.60517, 0.518529)
 light_indirect_energy = 0.0
 shadow_enabled = true
+shadow_bias = 0.01
+shadow_normal_bias = 6.0
 directional_shadow_mode = 1
 
 [node name="Wind" type="Area3D" parent="."]

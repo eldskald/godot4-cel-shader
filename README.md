@@ -33,6 +33,8 @@ Lastly, you can watch the [Youtube video](https://youtu.be/F0LZ_hAci4k) for more
 
 - **Apr 12, 2023** <br/> Update shadow settings (Thanks to Dustin Jablonski).
 
+- **Apr 7, 2023** <br/> Initial release.
+
 ## License
 
 All code is licensed under the [MIT](https://opensource.org/license/mit/) license.

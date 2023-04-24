@@ -1,6 +1,6 @@
 shader_type spatial;
 
-#define USE_ALPHA 1
+#define USE_ALPHA 0
 
 #if USE_ALPHA
 render_mode cull_front, unshaded, depth_draw_never, shadows_disabled;

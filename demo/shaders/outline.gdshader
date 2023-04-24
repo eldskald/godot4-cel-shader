@@ -1,12 +1,6 @@
 shader_type spatial;
 
-#define USE_ALPHA 0
-
-#if USE_ALPHA
-render_mode cull_front, unshaded, depth_draw_never, shadows_disabled;
-#else
-render_mode cull_front, unshaded, depth_draw_never, shadows_disabled;
-#endif
+render_mode cull_front, unshaded, depth_draw_never;
 
 global uniform vec4 outline_color;
 global uniform float outline_width;
@@ -28,7 +22,4 @@ void vertex() {
 
 void fragment() {
 	ALBEDO = outline_color.rgb;
-#if USE_ALPHA
-	ALPHA = 1.0;
-#endif
 }

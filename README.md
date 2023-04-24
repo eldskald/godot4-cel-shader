@@ -10,7 +10,7 @@ This project is a demo of my Cel Shader for Godot 4. This is a continuation of [
 
 ## Instructions
 
-Just put [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and the [includes](src/includes) folder on your project, on the same folder. Then, go to Project Settings > Shader Globals and set the following:
+You need to put everything on the [src](src) folder on your project, on the same folder. Then, go to Project Settings > Shader Globals and set the following:
 
 ```
 float specular_smoothness = 0.05
@@ -21,15 +21,23 @@ color outline_color = black
 
 These values are the ones that made this screenshot you're seeing, but feel free to mess around with these values.
 
+### Base Materials
+
 Whenever you want a material with one of the additional features, make a copy of [cel-shader-base.gdshader](src/cel-shader-base.gdshader) and change the defines.
 
 ![](images/image2.png)
 
-This is how the defines look on [cel-shader-base.gdshader](src/cel-shader-base.gdshader). For each feature you want, change the `0` to `1` and the additional uniforms should show up on the material. You can see the demo as an example.
+This is how the defines look on [cel-shader-base.gdshader](src/cel-shader-base.gdshader). For each feature you want, change the `0` to `1` and the additional uniforms should show up on the material. You must have the [includes](src/includes) folder on the same directory as the your modified copy. You can see the demo as an example.
 
 Lastly, you can watch the [Youtube video](https://youtu.be/F0LZ_hAci4k) for more information on how the base functions work and how to set it up.
 
+### Outlines
+
+Make another material with the [outline.gdshader](src/outline.gdshader) shader. Put this material on the `next_pass` property of the material.
+
 ## Changelog
+
+- **Apr 24, 2023** <br/> Add the outlines code to the source and add instructions on how to set them up.
 
 - **Apr 12, 2023** <br/> Update shadow settings (Thanks to Dustin Jablonski).
 

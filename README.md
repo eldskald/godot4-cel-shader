@@ -37,6 +37,8 @@ Make another material with the [outline.gdshader](src/outline.gdshader) shader. 
 
 ## Changelog
 
+- **Sep 19, 2023** <br/> Fix the SPECULAR_AMOUNT variable name being already used.
+
 - **Apr 24, 2023** <br/> Add the outlines code to the source and add instructions on how to set them up.
 
 - **Apr 12, 2023** <br/> Update shadow settings (Thanks to Dustin Jablonski).

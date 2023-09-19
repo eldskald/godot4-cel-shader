@@ -7,6 +7,8 @@
 render_priority = 0
 next_pass = ExtResource("1_5vcig")
 shader = ExtResource("1_n4wg8")
+shader_parameter/refraction = 0.0200008
+shader_parameter/blurriness = 0.0
 shader_parameter/color = Color(0.419608, 0.419608, 0.419608, 0)
 shader_parameter/specular = Color(0.501961, 0.501961, 0.501961, 0.501961)
 shader_parameter/fresnel = Color(0.352941, 0.352941, 0.352941, 0.301961)

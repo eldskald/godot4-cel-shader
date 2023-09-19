@@ -30,14 +30,14 @@ vec3 diffuse_light(
 vec3 specular_light(
 		vec3 light_color,
 		vec3 specular_color,
-		float specular_amount,
+		float specular_strength,
 		vec3 normal,
 		vec3 view,
 		vec3 light,
 		float attenuation
 ) {
 	vec3 half = normalize(view + light);
-	float gloss = pow(2.0, 8.0 * (1.0 - specular_amount));
+	float gloss = pow(2.0, 8.0 * (1.0 - specular_strength));
 	float intensity = pow(dot(normal, half), gloss * gloss);
 	return light_color
 			* specular_color
@@ -52,14 +52,14 @@ vec3 specular_light(
 vec3 fresnel_light(
 		vec3 light_color,
 		vec3 fresnel_color,
-		float fresnel_amount,
+		float fresnel_strength,
 		vec3 normal,
 		vec3 view,
 		vec3 light,
 		float attenuation
 ) {
 	float fresnel_dot = 1.0 - dot(normal, view);
-	float fresnel_threshold = pow((1.0 - fresnel_amount), dot(light, normal));
+	float fresnel_threshold = pow((1.0 - fresnel_strength), dot(light, normal));
 	return light_color
 			* fresnel_color
 			* is_lit(light, normal, attenuation)

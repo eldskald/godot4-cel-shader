@@ -29,7 +29,7 @@ AnisotropyData anisotropy_fragment(vec2 uv) {
 vec3 anisotropy_specular(
 		vec3 light_color,
 		vec3 specular_color,
-		float specular_amount,
+		float specular_strength,
 		vec3 normal,
 		vec3 view,
 		vec3 light,
@@ -41,7 +41,7 @@ vec3 anisotropy_specular(
 	vec3 half = normalize(view + light);
 	float aniso = max(0, sin(dot(normalize(normal + aniso_dir), half) * PI));
 	float spec = mix(dot(normal, half), aniso, aniso_ratio);
-	float spec_gloss = pow(2.0, 8.0 * (1.0 - specular_amount));
+	float spec_gloss = pow(2.0, 8.0 * (1.0 - specular_strength));
 	float spec_intensity = smoothstep(
 			0.05,
 			0.05 + specular_smoothness,

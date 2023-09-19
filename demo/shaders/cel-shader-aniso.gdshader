@@ -59,14 +59,15 @@ uniform sampler2D fresnel_texture: hint_default_white;
 group_uniforms;
 
 varying vec3 SPECULAR_COLOR;
-varying float SPECULAR_AMOUNT;
+varying float SPECULAR_STRENGTH;
 varying vec3 FRESNEL_COLOR;
-varying float FRESNEL_AMOUNT;
+varying float FRESNEL_STRENGTH;
 
 group_uniforms Tiling;
 uniform vec2 uv_scale = vec2(1,1);
 uniform vec2 uv_offset = vec2(0,0);
 group_uniforms;
+
 
 void vertex() {
 	UV = UV * uv_scale.xy + uv_offset.xy;
@@ -89,9 +90,9 @@ void fragment() {
 #endif
 	
 	SPECULAR_COLOR = specular.rgb * texture(specular_texture, UV).rgb;
-	SPECULAR_AMOUNT = specular.a * texture(specular_texture, UV).a;
+	SPECULAR_STRENGTH = specular.a * texture(specular_texture, UV).a;
 	FRESNEL_COLOR = fresnel.rgb * texture(fresnel_texture, UV).rgb;
-	FRESNEL_AMOUNT = fresnel.a * texture(fresnel_texture, UV).a;
+	FRESNEL_STRENGTH = fresnel.a * texture(fresnel_texture, UV).a;
 	
 #if USE_EMISSION
 	EMISSION += emission_fragment(UV);
@@ -151,7 +152,7 @@ void light() {
 	SPECULAR_LIGHT += anisotropy_specular(
 			LIGHT_COLOR,
 			SPECULAR_COLOR,
-			SPECULAR_AMOUNT,
+			SPECULAR_STRENGTH,
 			NORMAL,
 			VIEW,
 			LIGHT,
@@ -164,7 +165,7 @@ void light() {
 	SPECULAR_LIGHT += specular_light(
 			LIGHT_COLOR,
 			SPECULAR_COLOR,
-			SPECULAR_AMOUNT,
+			SPECULAR_STRENGTH,
 			NORMAL,
 			VIEW,
 			LIGHT,
@@ -175,7 +176,7 @@ void light() {
 	SPECULAR_LIGHT += fresnel_light(
 			LIGHT_COLOR,
 			FRESNEL_COLOR,
-			FRESNEL_AMOUNT,
+			FRESNEL_STRENGTH,
 			NORMAL,
 			VIEW,
 			LIGHT,

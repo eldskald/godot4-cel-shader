@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://drqxgxg04hoi5"]
 
-[ext_resource type="PackedScene" uid="uid://csrg6uwnwfiwo" path="res://models/models/terrain-1.glb" id="1_xfqf5"]
+[ext_resource type="PackedScene" uid="uid://8uoxs3b244sw" path="res://models/models/terrain-1.glb" id="1_xfqf5"]
 [ext_resource type="Material" uid="uid://kxcu62bv5lo4" path="res://materials/materials/grass-1.tres" id="2_ofimy"]
 [ext_resource type="Material" uid="uid://bduybcmyt0owf" path="res://materials/materials/stone-1.tres" id="3_v2c04"]
 

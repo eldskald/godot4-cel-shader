@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh4ugcqrvgpdq"]
 
-[ext_resource type="PackedScene" uid="uid://jgxi0rfoh2mm" path="res://models/models/shield-1.glb" id="1_gsf65"]
+[ext_resource type="PackedScene" uid="uid://ckl8hqlxm0it6" path="res://models/models/shield-1.glb" id="1_gsf65"]
 [ext_resource type="Material" uid="uid://2m8mvnhn7r2w" path="res://materials/materials/steel-2.tres" id="2_xsu8n"]
 [ext_resource type="Material" uid="uid://dh4ugbf0mb2oy" path="res://materials/materials/wood-2.tres" id="3_fme5d"]
 
@@ -9,11 +9,11 @@
 [node name="Cylinder" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_xsu8n")
 
-[node name="Cylinder001" parent="." index="1"]
+[node name="Cylinder_001" parent="." index="1"]
 surface_material_override/0 = ExtResource("3_fme5d")
 
 [node name="Sphere" parent="." index="2"]
 surface_material_override/0 = ExtResource("2_xsu8n")
 
-[node name="Cylinder002" parent="." index="3"]
+[node name="Cylinder_002" parent="." index="3"]
 surface_material_override/0 = ExtResource("3_fme5d")

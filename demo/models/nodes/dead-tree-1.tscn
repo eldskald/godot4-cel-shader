@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://clt0w1b5xvwag"]
 
-[ext_resource type="PackedScene" uid="uid://b2h5jo6npon06" path="res://models/models/dead-tree-1.glb" id="1_jrakl"]
+[ext_resource type="PackedScene" uid="uid://bg2vhaxoropg1" path="res://models/models/dead-tree-1.glb" id="1_jrakl"]
 [ext_resource type="Material" uid="uid://ds2i5hgjb58jb" path="res://materials/materials/bark-1.tres" id="2_kor6o"]
 
 [node name="dead-tree-1" instance=ExtResource("1_jrakl")]
@@ -8,17 +8,17 @@
 [node name="Cylinder" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_kor6o")
 
-[node name="Cylinder001" parent="." index="1"]
+[node name="Cylinder_001" parent="." index="1"]
 surface_material_override/0 = ExtResource("2_kor6o")
 
-[node name="Cylinder002" parent="." index="2"]
+[node name="Cylinder_002" parent="." index="2"]
 surface_material_override/0 = ExtResource("2_kor6o")
 
-[node name="Cylinder003" parent="." index="3"]
+[node name="Cylinder_003" parent="." index="3"]
 surface_material_override/0 = ExtResource("2_kor6o")
 
-[node name="Cylinder004" parent="." index="4"]
+[node name="Cylinder_004" parent="." index="4"]
 surface_material_override/0 = ExtResource("2_kor6o")
 
-[node name="Cylinder005" parent="." index="5"]
+[node name="Cylinder_005" parent="." index="5"]
 surface_material_override/0 = ExtResource("2_kor6o")

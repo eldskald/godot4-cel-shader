@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://p21txr4pycm4"]
 
-[ext_resource type="PackedScene" uid="uid://dhp0j0xwqywjt" path="res://models/models/terrain-2.glb" id="1_pderv"]
+[ext_resource type="PackedScene" uid="uid://do8dgdbqlrlte" path="res://models/models/terrain-2.glb" id="1_pderv"]
 [ext_resource type="Material" uid="uid://kxcu62bv5lo4" path="res://materials/materials/grass-1.tres" id="2_kj1l7"]
 
 [node name="terrain-2" instance=ExtResource("1_pderv")]

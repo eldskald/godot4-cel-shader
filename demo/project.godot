@@ -23,6 +23,10 @@ settings/stdout/print_fps=true
 
 naming/scene_name_casing=0
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 click={
@@ -67,10 +71,6 @@ diffuse_curve={
 "type": "sampler2D",
 "value": ""
 }
-outline_color={
-"type": "color",
-"value": Color(0, 0, 0, 1)
-}
 fresnel_smoothness={
 "type": "float",
 "value": 0.05
@@ -82,4 +82,8 @@ specular_smoothness={
 outline_width={
 "type": "float",
 "value": 4.0
+}
+outline_color={
+"type": "color",
+"value": Color(0, 0, 0, 1)
 }

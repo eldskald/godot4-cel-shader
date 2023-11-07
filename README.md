@@ -37,6 +37,8 @@ Make another material with the [outline.gdshader](src/outline.gdshader) shader. 
 
 ## Changelog
 
+- **Nov 7, 2023** <br/> Fix mountain shadows.
+
 - **Nov 2, 2023** <br/> Fix broken material dependencies.
 
 - **Sep 19, 2023** <br/> Fix the SPECULAR_AMOUNT variable name being already used.

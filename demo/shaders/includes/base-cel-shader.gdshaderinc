@@ -1,17 +1,11 @@
-// global uniform sampler2D diffuse_curve;
+global uniform sampler2D diffuse_curve: repeat_disable;
 global uniform float specular_smoothness;
 global uniform float fresnel_smoothness;
 
-float diffuse_sample(vec3 light, vec3 normal) {
-	return smoothstep(0.02, 0.05, dot(light, normal));
-}
-
-// float diffuse_sample(vec3 light, vec3 normal) {
-//	return texture(
-//		diffuse_curve,
-//		vec2(clamp(dot(light, normal), 0.01, 0.99), 0)
-//	).r;
-// }
+ float diffuse_sample(vec3 light, vec3 normal) {
+	return texture(diffuse_curve, vec2(dot(light, normal), 0)
+	).r;
+ }
 
 float is_lit(vec3 light, vec3 normal, float attenuation) {
 	return attenuation * diffuse_sample(light, normal);

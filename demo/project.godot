@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot 4 Cel Shader"
 run/main_scene="res://sample-scene.tscn"
-config/features=PackedStringArray("4.1", "Forward Plus")
+config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [debug]
@@ -69,7 +69,7 @@ anti_aliasing/quality/msaa_3d=1
 
 diffuse_curve={
 "type": "sampler2D",
-"value": ""
+"value": "res://textures/diffuse-texture.tres"
 }
 fresnel_smoothness={
 "type": "float",

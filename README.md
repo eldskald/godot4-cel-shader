@@ -13,6 +13,7 @@ This project is a demo of my Cel Shader for Godot 4. This is a continuation of [
 You need to put everything on the [src](src) folder on your project, on the same folder. Then, go to Project Settings > Shader Globals and set the following:
 
 ```
+sampler2D diffuse_curve
 float specular_smoothness = 0.05
 float fresnel_smoothness = 0.05
 float outline_width = 4
@@ -20,6 +21,8 @@ color outline_color = black
 ```
 
 These values are the ones that made this screenshot you're seeing, but feel free to mess around with these values.
+
+The `diffuse_curve` texture must also be set. You can put a texture you already have or you can use Godot's built in `GradientTexture1D` or `CurveTexture` types, but *you must save them as resources* or else the engine won't be able to load them the next time you open Godot. The one I used for this demo is [this one](demo/texture/diffuse-texture.tres) saved from a `GradientTexture1D` resource, so you can use this one to get a scene looking exactly like the one in the demo. I explain its functionality more in detail on [the previous video](https://youtu.be/Y3tT_-GTXKg).
 
 ### Base Materials
 
@@ -36,6 +39,8 @@ Lastly, you can watch the [Youtube video](https://youtu.be/F0LZ_hAci4k) for more
 Make another material with the [outline.gdshader](src/outline.gdshader) shader. Put this material on the `next_pass` property of the material.
 
 ## Changelog
+
+- **April 24, 2023** <br/> Add diffuse_curve global shader parameter (Thanks to Urakaroo).
 
 - **Nov 7, 2023** <br/> Fix mountain shadows.
 

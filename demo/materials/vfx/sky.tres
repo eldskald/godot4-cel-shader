@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=13 format=3 uid="uid://dp46s1ve43yhf"]
 
-[ext_resource type="Shader" path="res://shaders/sky.gdshader" id="1_velad"]
+[ext_resource type="Shader" uid="uid://fm3tpdkjha1f" path="res://shaders/sky.gdshader" id="1_velad"]
 
 [sub_resource type="Gradient" id="Gradient_jc28h"]
 
@@ -8,17 +8,17 @@
 seed = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bnojb"]
-seamless = true
-color_ramp = SubResource("Gradient_jc28h")
 noise = SubResource("FastNoiseLite_1acnv")
+color_ramp = SubResource("Gradient_jc28h")
+seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_agwu3"]
 seed = 5
 domain_warp_enabled = true
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aoqph"]
-seamless = true
 noise = SubResource("FastNoiseLite_agwu3")
+seamless = true
 
 [sub_resource type="Gradient" id="Gradient_aw1b7"]
 colors = PackedColorArray(0.48, 0.48, 0.48, 1, 1, 1, 1, 1)
@@ -26,9 +26,9 @@ colors = PackedColorArray(0.48, 0.48, 0.48, 1, 1, 1, 1, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_we3l6"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2bsyi"]
-seamless = true
-color_ramp = SubResource("Gradient_aw1b7")
 noise = SubResource("FastNoiseLite_we3l6")
+color_ramp = SubResource("Gradient_aw1b7")
+seamless = true
 
 [sub_resource type="Gradient" id="Gradient_oiisc"]
 
@@ -38,9 +38,9 @@ fractal_octaves = 1
 cellular_distance_function = 1
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x02iq"]
-seamless = true
-color_ramp = SubResource("Gradient_oiisc")
 noise = SubResource("FastNoiseLite_xxj6f")
+color_ramp = SubResource("Gradient_oiisc")
+seamless = true
 
 [resource]
 shader = ExtResource("1_velad")
@@ -60,15 +60,15 @@ shader_parameter/sun_blur = 0.01
 shader_parameter/moon_col = Color(0, 0, 0, 1)
 shader_parameter/moon_size = 0.15
 shader_parameter/moon_crescent_offset = -0.1
+shader_parameter/clouds_texture = SubResource("NoiseTexture2D_2bsyi")
+shader_parameter/clouds_distort_texture = SubResource("NoiseTexture2D_bnojb")
+shader_parameter/clouds_noise_texture = SubResource("NoiseTexture2D_aoqph")
 shader_parameter/clouds_main_color = Color(0.639216, 0.639216, 0.639216, 1)
 shader_parameter/clouds_edge_color = Color(0.639216, 0.639216, 0.639216, 1)
 shader_parameter/clouds_speed = 0.05
 shader_parameter/clouds_scale = 0.16
 shader_parameter/clouds_cutoff = 0.16
 shader_parameter/clouds_fuzziness = 0.07
-shader_parameter/clouds_texture = SubResource("NoiseTexture2D_2bsyi")
-shader_parameter/clouds_distort_texture = SubResource("NoiseTexture2D_bnojb")
-shader_parameter/clouds_noise_texture = SubResource("NoiseTexture2D_aoqph")
+shader_parameter/stars_texture = SubResource("NoiseTexture2D_x02iq")
 shader_parameter/stars_cutoff = 0.925
 shader_parameter/stars_speed = 0.014
-shader_parameter/stars_texture = SubResource("NoiseTexture2D_x02iq")

@@ -82,47 +82,47 @@ void fragment() {
 	ALPHA = color.a * texture(base_texture, UV).a;
 	ALPHA_SCISSOR_THRESHOLD = color.a * texture(base_texture, UV).a;
 #endif
-	
+
 #if USE_REFRACTION && USE_ALPHA
 	EMISSION += refraction_fragment(alpha, NORMAL, SCREEN_UV, FRAGCOORD.z);
 #elif !USE_REFRACTION && USE_ALPHA
 	EMISSION += transparency_fragment(alpha, SCREEN_UV);
 #endif
-	
+
 	SPECULAR_COLOR = specular.rgb * texture(specular_texture, UV).rgb;
 	SPECULAR_STRENGTH = specular.a * texture(specular_texture, UV).a;
 	FRESNEL_COLOR = fresnel.rgb * texture(fresnel_texture, UV).rgb;
 	FRESNEL_STRENGTH = fresnel.a * texture(fresnel_texture, UV).a;
-	
+
 #if USE_EMISSION
 	EMISSION += emission_fragment(UV);
 #endif
-	
+
 #if USE_REFLECTIONS
 	Surface surf = reflections_fragment(UV);
 	METALLIC = surf.metallic;
 	ROUGHNESS = surf.roughness;
 #endif
-	
+
 #if USE_NORMAL_MAP
 	NormalData normal = normal_map_fragment(UV, NORMAL, TANGENT, BINORMAL);
 	NORMAL = normal.vector;
 	NORMAL_MAP = normal.map;
 	NORMAL_MAP_DEPTH = normal.depth;
 #endif
-	
+
 #if USE_OCCLUSION
 	OcclusionData occlusion = occlusion_fragment(UV);
 	AO = occlusion.ao;
 	AO_LIGHT_AFFECT = occlusion.ao_light_affect;
 #endif
-	
+
 #if USE_ANISOTROPY
 	AnisotropyData aniso = anisotropy_fragment(UV);
 	ANISOTROPY_DIR = aniso.direction;
 	ANISOTROPY_RATIO = aniso.ratio;
 #endif
-	
+
 #if USE_BACKLIGHT
 	BACKLIGHT = backlight_fragment(UV);
 #endif
@@ -147,7 +147,7 @@ void light() {
 			ATTENUATION
 	);
 #endif
-	
+
 #if USE_ANISOTROPY
 	SPECULAR_LIGHT += anisotropy_specular(
 			LIGHT_COLOR,

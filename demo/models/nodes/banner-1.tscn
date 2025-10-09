@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bt8wlqkmgclib"]
 
-[ext_resource type="PackedScene" uid="uid://dqikye1vq12qm" path="res://models/models/banner-1.glb" id="1_auohb"]
+[ext_resource type="PackedScene" uid="uid://bc5k8sxdvscw" path="res://models/models/banner-1.glb" id="1_auohb"]
 [ext_resource type="Material" uid="uid://b30hw7jthmxmu" path="res://materials/materials/wood-1.tres" id="2_onvrp"]
 [ext_resource type="Material" uid="uid://c2278ea5y38ul" path="res://materials/materials/cloth-1.tres" id="3_cjsqq"]
-[ext_resource type="ArrayMesh" uid="uid://cv7mq4k1iosk5" path="res://models/models/banner-cloth-1.obj" id="3_mtp1o"]
+[ext_resource type="ArrayMesh" uid="uid://u2seaodwjcrs" path="res://models/models/banner-cloth-1.obj" id="3_mtp1o"]
 
 [node name="banner-1" instance=ExtResource("1_auohb")]
 

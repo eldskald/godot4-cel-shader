@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://x5u5qv4eorfh"]
 
-[ext_resource type="PackedScene" uid="uid://b7vr2q2t2jb2y" path="res://models/models/sword-1.glb" id="1_3we6o"]
+[ext_resource type="PackedScene" uid="uid://d2i3qj7nbowa3" path="res://models/models/sword-1.glb" id="1_3we6o"]
 [ext_resource type="Material" uid="uid://5qss4ojdhbk2" path="res://materials/materials/steel-1.tres" id="2_hapi1"]
 [ext_resource type="Material" uid="uid://2m8mvnhn7r2w" path="res://materials/materials/steel-2.tres" id="3_1gid1"]
 [ext_resource type="Material" uid="uid://b30hw7jthmxmu" path="res://materials/materials/wood-1.tres" id="4_46tqg"]

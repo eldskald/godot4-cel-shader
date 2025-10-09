@@ -40,7 +40,9 @@ Make another material with the [outline.gdshader](src/outline.gdshader) shader. 
 
 ## Changelog
 
-- **April 24, 2023** <br/> Add diffuse_curve global shader parameter (Thanks to Urakaroo).
+- **October 8, 2025** <br/> Update to latest Godot version.
+
+- **April 24, 2024** <br/> Add diffuse_curve global shader parameter (Thanks to Urakaroo).
 
 - **Nov 7, 2023** <br/> Fix mountain shadows.
 

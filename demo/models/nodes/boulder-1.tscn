@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gade2qfiwkac"]
 
-[ext_resource type="PackedScene" uid="uid://8l3ygdko6dsi" path="res://models/models/boulder-1.glb" id="1_jjg3p"]
+[ext_resource type="PackedScene" uid="uid://c502u1mtqejjp" path="res://models/models/boulder-1.glb" id="1_jjg3p"]
 [ext_resource type="Material" uid="uid://bduybcmyt0owf" path="res://materials/materials/stone-1.tres" id="2_kml52"]
 
 [node name="boulder-1" instance=ExtResource("1_jjg3p")]

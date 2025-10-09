@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://dp46s1ve43yhf" path="res://materials/vfx/sky.tres" id="1_sdkug"]
 [ext_resource type="PackedScene" uid="uid://c5rtegb17frlh" path="res://models/nodes/ground-2.tscn" id="2_0rnuk"]
-[ext_resource type="Shader" path="res://shaders/fog-particles.gdshader" id="3_3yirp"]
+[ext_resource type="Shader" uid="uid://byuaahljonmxn" path="res://shaders/fog-particles.gdshader" id="3_3yirp"]
 [ext_resource type="Material" uid="uid://bosesbm3odu8g" path="res://materials/vfx/fog-particles-instance.tres" id="3_ro55t"]
 [ext_resource type="PackedScene" uid="uid://clt0w1b5xvwag" path="res://models/nodes/dead-tree-1.tscn" id="4_7qvcg"]
 [ext_resource type="PackedScene" uid="uid://qhwe2yhkr5vk" path="res://models/nodes/polearm-1.tscn" id="4_qojxx"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://cybaae27u1ftu" path="res://models/nodes/shrub-1.tscn" id="13_yd88f"]
 [ext_resource type="PackedScene" uid="uid://drqxgxg04hoi5" path="res://models/nodes/terrain-1.tscn" id="14_ouj73"]
 [ext_resource type="Material" uid="uid://76ryr25aklhn" path="res://materials/vfx/volumetric-fog.tres" id="18_lpgmh"]
-[ext_resource type="Script" path="res://scripts/controls.gd" id="19_rl5th"]
+[ext_resource type="Script" uid="uid://baugb3blux0en" path="res://scripts/controls.gd" id="19_rl5th"]
 
 [sub_resource type="Sky" id="Sky_sudva"]
 sky_material = ExtResource("1_sdkug")
@@ -48,7 +48,7 @@ size = Vector3(46.5489, 22.4772, 41.5525)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5lms4"]
 shader = ExtResource("3_3yirp")
 shader_parameter/color = Color(1, 1, 1, 1)
-shader_parameter/initial_linear_velocity_min = null
+shader_parameter/initial_linear_velocity_min = 0.0
 shader_parameter/initial_linear_velocity_max = 0.0
 shader_parameter/scale_min = 3.0
 shader_parameter/scale_max = 6.0

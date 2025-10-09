@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dh4ugcqrvgpdq"]
 
-[ext_resource type="PackedScene" uid="uid://ckl8hqlxm0it6" path="res://models/models/shield-1.glb" id="1_gsf65"]
+[ext_resource type="PackedScene" uid="uid://dv8j1sarotm35" path="res://models/models/shield-1.glb" id="1_gsf65"]
 [ext_resource type="Material" uid="uid://2m8mvnhn7r2w" path="res://materials/materials/steel-2.tres" id="2_xsu8n"]
 [ext_resource type="Material" uid="uid://dh4ugbf0mb2oy" path="res://materials/materials/wood-2.tres" id="3_fme5d"]
 

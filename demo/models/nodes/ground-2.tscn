@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c5rtegb17frlh"]
 
-[ext_resource type="PackedScene" uid="uid://brx10jph112fv" path="res://models/models/ground-2.glb" id="1_p0451"]
+[ext_resource type="PackedScene" uid="uid://b48ooyhytnaq" path="res://models/models/ground-2.glb" id="1_p0451"]
 [ext_resource type="Material" uid="uid://kxcu62bv5lo4" path="res://materials/materials/grass-1.tres" id="2_ofoca"]
 [ext_resource type="Material" uid="uid://bduybcmyt0owf" path="res://materials/materials/stone-1.tres" id="3_ytoqi"]
 [ext_resource type="Material" uid="uid://cxmk70r5irw5f" path="res://materials/materials/grass-2.tres" id="4_nwkj6"]

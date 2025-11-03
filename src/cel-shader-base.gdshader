@@ -4,9 +4,9 @@ shader_type spatial;
 #define USE_ALPHA_CUTOFF 0
 #define USE_EMISSION 0
 #define USE_REFLECTIONS 0
-#define USE_HEIGHT_MAP 0
 #define USE_NORMAL_MAP 0
 #define USE_OCCLUSION 0
+#define USE_HEIGHT_MAP 0
 #define USE_ANISOTROPY 0
 #define USE_BACKLIGHT 0
 #define USE_REFRACTION 0
@@ -77,7 +77,6 @@ group_uniforms;
 
 void vertex() {
 	UV = UV * uv_scale.xy + uv_offset.xy;
-	base_uv = UV;
 }
 
 void fragment() {
@@ -101,7 +100,7 @@ void fragment() {
 	FRESNEL_STRENGTH = fresnel.a * texture(fresnel_texture, base_uv).a;
 
 #if USE_EMISSION
-	EMISSION += emission_fragment(UV);
+	EMISSION += emission_fragment(base_uv);
 #endif
 
 #if USE_REFLECTIONS
@@ -111,14 +110,14 @@ void fragment() {
 #endif
 
 #if USE_NORMAL_MAP
-	NormalData normal = normal_map_fragment(UV, NORMAL, TANGENT, BINORMAL);
+	NormalData normal = normal_map_fragment(base_uv, NORMAL, TANGENT, BINORMAL);
 	NORMAL = normal.vector;
 	NORMAL_MAP = normal.map;
 	NORMAL_MAP_DEPTH = normal.depth;
 #endif
 
 #if USE_OCCLUSION
-	OcclusionData occlusion = occlusion_fragment(UV);
+	OcclusionData occlusion = occlusion_fragment(base_uv);
 	AO = occlusion.ao;
 	AO_LIGHT_AFFECT = occlusion.ao_light_affect;
 #endif
@@ -134,7 +133,7 @@ void fragment() {
 #endif
 
 #if USE_BACKLIGHT
-	BACKLIGHT = backlight_fragment(UV);
+	BACKLIGHT = backlight_fragment(base_uv);
 #endif
 
 ALBEDO = color.rgb * texture(base_texture, base_uv).rgb;

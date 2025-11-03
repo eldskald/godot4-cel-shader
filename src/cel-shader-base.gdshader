@@ -77,6 +77,9 @@ group_uniforms;
 
 void vertex() {
 	UV = UV * uv_scale.xy + uv_offset.xy;
+	#if !USE_HEIGHT_MAP
+		base_uv = UV;
+	#endif
 }
 
 void fragment() {

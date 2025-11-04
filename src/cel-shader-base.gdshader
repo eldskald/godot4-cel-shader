@@ -83,6 +83,10 @@ void vertex() {
 }
 
 void fragment() {
+#if USE_HEIGHT_MAP
+	base_uv = height_map_fragment(UV, VERTEX, TANGENT, BINORMAL, NORMAL);
+#endif
+
 #if USE_ALPHA
 	float alpha = color.a * texture(base_texture, base_uv).a;
 	ALBEDO *= alpha;
@@ -123,10 +127,6 @@ void fragment() {
 	OcclusionData occlusion = occlusion_fragment(base_uv);
 	AO = occlusion.ao;
 	AO_LIGHT_AFFECT = occlusion.ao_light_affect;
-#endif
-
-#if USE_HEIGHT_MAP
-	base_uv = height_map_fragment(UV, VERTEX, TANGENT, BINORMAL, NORMAL);
 #endif
 
 #if USE_ANISOTROPY
